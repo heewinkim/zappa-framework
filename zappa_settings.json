@@ -1,0 +1,9 @@
+{
+    "production": {
+        "app_function": "source.main.application",
+        "profile_name": "heewinkim",
+        "project_name": "common",
+        "runtime": "python3.6",
+        "s3_bucket": "zappa-n0wby3a7p"
+    }
+}
