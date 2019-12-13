@@ -2,6 +2,11 @@
 
     aws lambda - zappa - flask - python 
     을 한번더 감싼 개인적인 목적의 프로젝트 입니다. 
+    
+    zappa 기본 사용법은 동일합니다
+    $zappa init
+    $zappa deploy,update {lambda_name} 
+    등등..
 
 ----
 
