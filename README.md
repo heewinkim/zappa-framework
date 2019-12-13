@@ -10,6 +10,22 @@
 
 ----
 
+
+### common.core
+- error : Error 에러클래스 제공, ERROR_TYPES의 에러 타입 제공
+- logger : Logger 클래스 제공, 로그관련 처리 기능 제공
+- output : Output 클래스 제공, output 관련기능, 에러에 대한 로그처리 기능 제공
+
+### common.framwork  
+
+- flask : Flask로 구현된 웹 API 클래스인 Flask 를 제공합니다.  
+
+### source.main
+
+- main : flask 를 이용하여 lambda function 를 구현하는 파일입니다.  
+
+---
+
 ### USEAGE
 
 source/main.py 에 API 작성.
@@ -26,10 +42,17 @@ source/main.py 에 API 작성.
     def request_fd():
     
         # default output key value 설정
-        application.output.set_default(dict_obj={'appType': '','transId': ')})
+        application.output.set_default(dict_obj={'result':None})
+        
+        # files, form, json, args 파라미터는 모두 다음과같이 꺼내올 수 있음
+        data = application.output.form['data']
         
         # output은 다음과같이 최종결과를 dict로 보내면 됨
-        return application.output.return_output({'result':'good'})
+        return application.output.return_output(
+            {
+                'result':'good {}'.format(data)
+            }
+        )
     
     if __name__ == '__main__':
         application.run()
